@@ -22,7 +22,8 @@
     "rc": "1.0.1",
     "sails": "~0.12.8",
     "sails-disk": "~0.10.9",
-    "sails-swagger": "^0.5.1"
+    "sails-swagger": "^0.5.1",
+    "swagger-ui": "^2.2.6"
   },
   "scripts": {
     "debug": "node debug app.js",
@@ -31,11 +32,9 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/fagnerng/m3v.git"
+    "url": "https://github.com/fagnerng/m3v-web.git"
   },
   "author": "fagnerng",
-  "license": "",
-  "devDependencies": {
-    "swagger-ui": "^2.2.6"
-  }
+  "license": ""
+
 }

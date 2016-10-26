@@ -7,10 +7,29 @@
 
 module.exports = {
 
+  autoCreatedAt: false,
+  autoUpdatedAt: false,
   attributes: {
-    name: {
-      type: "string"
+    username:{
+      type: "string",
+      required: true,
+      unique: true,
+    },
+    password:{
+      type: "string",
+      defaultsTo : ""
+    },
+    email:{
+      type:"email",
+      unique: true
+    },
+
+    toJSON: function () {
+      var obj = this.toObject();
+      delete obj.password;
+      return obj;
     }
+
   }
 };
 
