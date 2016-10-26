@@ -1,2 +1,3 @@
-# m3v-web
-server side m3v
+# m3v
+
+a [Sails](http://sailsjs.org) application
