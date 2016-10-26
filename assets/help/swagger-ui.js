@@ -861,7 +861,7 @@ window.Docs = {
 	shebang: function() {
 
 		// If shebang has an operation nickname in it..
-		// e.g. /docs/#!/words/get_search
+		// e.g. /help/#!/words/get_search
 		var fragments = $.param.fragment().split('/');
 		fragments.shift(); // get rid of the bang
 

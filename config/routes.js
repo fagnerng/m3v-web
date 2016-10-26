@@ -33,7 +33,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    redirect: '/docs'
+    view: 'homepage'
   },
 
   /***************************************************************************
@@ -56,5 +56,11 @@ module.exports.routes = {
     'GET /tree/:id': { controller: "TreeController", action: 'findOne' },
     'POST /tree' : { controller: "TreeController", action: 'create' },
     'PUT /tree/:id' : { controller: "TreeController", action: 'update' },
-    'DELETE /tree/:id' : { controller: "TreeController", action: 'destroy' }
+    'DELETE /tree/:id' : { controller: "TreeController", action: 'destroy' },
+
+    'GET /name' :  { controller: "NameController", action: 'find' },
+    'GET /name/:id': { controller: "NameController", action: 'findOne' },
+    'POST /name' : { controller: "NameController", action: 'create' },
+    'PUT /name/:id' : { controller: "NameController", action: 'update' },
+    'DELETE /name/:id' : { controller: "NameController", action: 'destroy' }
 };
