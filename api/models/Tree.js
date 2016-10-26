@@ -18,28 +18,28 @@ module.exports = {
       type: "string"
     },
     fuste: {
-      type: "double"
+      type: "float"
     },
     height: {
-      type: "double"
+      type: "float"
     },
     dap: {
-      type: "double"
+      type: "float"
     },
     cap: {
-      type: "double"
+      type: "float"
     },
     biological: {
-      type: "double"
+      type: "float"
     },
     anthropic: {
-      type: "double"
+      type: "float"
     },
     latitude: {
-      type: "double"
+      type: "float"
     },
     longitude: {
-      type: "double"
+      type: "float"
     }
   }
 };
