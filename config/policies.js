@@ -20,13 +20,8 @@
 module.exports.policies = {
 
 
-  '*': true,
-  'SwaggerController': {
-      add: false,
-      remove: false,
-      update: false,
-      create: false
-  }
+  '*': true
+
   /***************************************************************************
   *                                                                          *
   * Default policy for all controllers and actions (`true` allows public     *
