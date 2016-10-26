@@ -34,7 +34,7 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
 
   /***************************************************************************
   *                                                                          *
@@ -46,4 +46,9 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+'GET /user' :  { controller: "UserController", action: 'find' },
+'GET /user/:id': { controller: "UserController", action: 'findOne' },
+'POST /user' : { controller: "UserController", action: 'create' },
+'PUT /user/:id' : { controller: "UserController", action: 'update' },
+'DELETE /user/:id' : { controller: "UserController", action: 'destroy' }
 };
