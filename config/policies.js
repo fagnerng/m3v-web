@@ -20,7 +20,7 @@
 module.exports.policies = {
 
 
-  '*': true
+
 
   /***************************************************************************
   *                                                                          *
@@ -29,8 +29,13 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
-
+  '*': ['isAuthorized'],
+  'AuthController': {
+    '*': true // We do not need authorization here, allowing public access
+  },
+  'SwaggerController': {
+    '*': true // We do not need authorization here, allowing public access
+  },
   /***************************************************************************
   *                                                                          *
   * Here's an example of mapping some policies to run before a controller    *

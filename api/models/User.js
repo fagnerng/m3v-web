@@ -13,11 +13,11 @@ module.exports = {
     username:{
       type: "string",
       required: true,
-      unique: true,
+      unique: true
     },
     password:{
       type: "string",
-      defaultsTo : ""
+        required : true
     },
     email:{
       type:"email",
@@ -28,6 +28,41 @@ module.exports = {
       var obj = this.toObject();
       delete obj.password;
       return obj;
+    },
+
+    beforeCreate : function (values, next) {
+      User.hashPassword(values, next);
+    },
+
+    beforeUpdate: function(values, next) {
+      if (values.password || values.password == "") {
+        User.hashPassword(values, next);
+      } else {
+        next();
+      }
+    },
+
+    hashPassword : function (values, next) {
+      bcrypt.genSalt(10, function (err, salt) {
+        if(err) return next(err);
+        bcrypt.hash(values.password, salt, function (err, hash) {
+          if(err) return next(err);
+          values.password = hash;
+          next();
+        })
+      })
+    },
+
+    comparePassword : function (password, user, cb) {
+      bcrypt.compare(password, user.password, function (err, match) {
+
+        if(err) cb(err);
+        if(match) {
+          cb(null, true);
+        } else {
+          cb(err);
+        }
+      })
     }
 
   }
