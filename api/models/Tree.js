@@ -14,8 +14,17 @@ module.exports = {
       type:"int",
       unique: true
     },
+    identification: {
+      type: "int"
+    },
     species: {
       type: "string"
+    },
+    latitude: {
+      type: "float"
+    },
+    longitude: {
+      type: "float"
     },
     fuste: {
       type: "float"
@@ -30,16 +39,10 @@ module.exports = {
       type: "float"
     },
     biological: {
-      type: "float"
+      type: "int"
     },
     anthropic: {
-      type: "float"
-    },
-    latitude: {
-      type: "float"
-    },
-    longitude: {
-      type: "float"
+      type: "int"
     }
   }
 };

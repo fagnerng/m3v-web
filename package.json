@@ -35,5 +35,8 @@
     "url": "https://github.com/fagnerng/m3v-web.git"
   },
   "author": "fagnerng",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "sails-generate-policy": "^0.1.1"
+  }
 }
