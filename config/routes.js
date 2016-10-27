@@ -45,6 +45,7 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+    'POST /auth' : { controller: "AuthController", action: "login" },
 
     'GET /user' :  { controller: "UserController", action: 'find' },
     'GET /user/:id': { controller: "UserController", action: 'findOne' },
