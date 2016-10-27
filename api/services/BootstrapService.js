@@ -2,7 +2,7 @@
  * BootstrapService.js
  */
 var userAdmin = {
-  usename: 'admin',
+  username: 'admin',
   password: 'senha#123',
   email: 'fagnerngomes@gmail.com'
 };
