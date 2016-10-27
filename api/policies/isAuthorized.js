@@ -20,18 +20,18 @@ module.exports = function (req, res, next) {
         token = credentials;
       }
     } else {
-      return res.unauthorized('Format is Authorization: Bearer [token]');
+      return res.status(401).send({ error: 'Format is Authorization: Bearer [token]'});
     }
   } else if (req.param('token')) {
     token = req.param('token');
     // We delete the token from param to not mess with blueprints
     delete req.query.token;
   } else {
-    return res.unauthorized('No Authorization header was found');
+    return res.status(401).send({ error: 'No Authorization header was found'});
   }
 
   AuthService.verify(token, function (err, token) {
-    if (err) return res.unauthorized('Invalid Token');
+    if (err) return res.status(401).send({ error: 'Invalid Token'});
     req.token = token; // This is the decrypted token or the payload you provided
     next();
   });
