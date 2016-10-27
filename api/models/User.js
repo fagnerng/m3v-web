@@ -7,29 +7,29 @@
 
 module.exports = {
 
-  autoCreatedAt: false,
-  autoUpdatedAt: false,
-  attributes: {
-    username:{
-      type: "string",
-      required: true,
-      unique: true
-    },
-    password:{
-      type: "string",
-      required : true
-    },
-    email:{
-      type:"email",
-      unique: true
-    },
+    autoCreatedAt: false,
+    autoUpdatedAt: false,
+    attributes: {
+      username: {
+          type: "string",
+          required: true,
+          unique: true
+      },
+      password: {
+          type: "string",
+          required: true
+      },
+      email: {
+          type: "email",
+          unique: true
+      },
 
-    toJSON: function () {
-      var obj = this.toObject();
-      delete obj.password;
-      return obj;
+      toJSON: function () {
+          var obj = this.toObject();
+          delete obj.password;
+          return obj;
+      }
     },
-
     beforeCreate : function (values, next) {
       User.hashPassword(values, next);
     },
@@ -64,7 +64,5 @@ module.exports = {
         }
       })
     }
-
-  }
 };
 
