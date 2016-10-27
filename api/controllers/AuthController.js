@@ -29,6 +29,7 @@ module.exports = {
         if (!valid) {
           return res.unauthorized('invalid username or password');
         } else {
+          sails.log(reqId);
           res.json({
             user: user,
             token: AuthService.issue({id : user.id, username: user.username, reqId: reqId})
