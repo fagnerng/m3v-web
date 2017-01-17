@@ -29,7 +29,7 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  '*': ['isAuthorized'],
+  '*': [true], //isAuthorized
   'AuthController': {
     '*': true // We do not need authorization here, allowing public access
   },
